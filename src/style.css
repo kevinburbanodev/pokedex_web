@@ -1,0 +1,132 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fredoka', system-ui, sans-serif;
+  --font-sans: 'Nunito', system-ui, sans-serif;
+
+  --color-paper: #fbf4ec;
+  --color-ink: #2a2024;
+  --color-cream: #efe6d8;
+  --color-line: #e7dccb;
+  --color-sand: #b8a78f;
+  --color-taupe: #9c8b73;
+  --color-brown: #6b5d4b;
+
+  --color-accent: #dc3b4b;
+
+  --color-type-grass: #5fbf57;
+  --color-type-fire: #f0803c;
+  --color-type-water: #4b90d9;
+  --color-type-electric: #f0c63c;
+  --color-type-psychic: #f45c8c;
+  --color-type-ice: #74cec0;
+  --color-type-dragon: #6a5ce0;
+  --color-type-dark: #5a5366;
+  --color-type-fairy: #ee99d6;
+  --color-type-fighting: #d4463e;
+  --color-type-poison: #a552cc;
+  --color-type-ground: #e0b457;
+  --color-type-rock: #b49b57;
+  --color-type-bug: #9db84b;
+  --color-type-ghost: #6c5ca8;
+  --color-type-steel: #8fa9b8;
+  --color-type-flying: #8fb4e8;
+  --color-type-normal: #9c9c7e;
+  --color-type-unknown: #a9b197;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-accent);
+}
+a:hover {
+  color: #b62b3a;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.05);
+  }
+}
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, -46px);
+  }
+}
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes shadow-pulse {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 0.26;
+  }
+  50% {
+    transform: translateX(-50%) scaleX(0.78);
+    opacity: 0.16;
+  }
+}
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 3.4s ease-in-out infinite;
+}
+.animate-floaty {
+  animation: floaty 4s ease-in-out infinite;
+}
+.animate-drift {
+  animation: drift 7s ease-in-out infinite alternate;
+}
+.animate-pop {
+  animation: pop 0.4s ease both;
+}
+.animate-shadow-pulse {
+  animation: shadow-pulse 3.4s ease-in-out infinite;
+}
+.animate-spin-slow {
+  animation: spin-slow 0.8s linear infinite;
+}
